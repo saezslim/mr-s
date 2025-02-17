@@ -1,0 +1,40 @@
+---
+
+---
+
+<div class="logo">
+  <div class="logo__text">
+    <p>Mr.</p>
+    <p>X</p>
+  </div>
+  <div class="logo__img">
+    <img src="/src/assets/mrx.PNG" alt="Mr.X" />
+  </div>
+</div>
+<style lang="scss">
+  .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9cdd6;
+    border: solid 1px black;
+    padding: 1.2rem;
+    gap: 2rem;
+    &__text {
+      margin-right: 1.2rem;
+      transform: rotateZ(-15deg);
+      p {
+        font-size: 3rem;
+        font-weight: bold;
+        margin: 0;
+
+        line-height: 0.8;
+      }
+      :last-child {
+        font-size: 6.5rem;
+        font-weight: bolder;
+      }
+    }
+  }
+</style>

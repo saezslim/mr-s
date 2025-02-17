@@ -1,0 +1,53 @@
+---
+import Logo from './Logo.astro'
+---
+
+<header class="site-header" transition:persist>
+  <div class="site-header__inner">
+    <Logo />
+    <div>
+      <p>All The Muck</p>
+      <p>That's Fit To Rake</p>
+    </div>
+  </div>
+</header>
+
+<style lang="scss">
+  .site-header {
+    position: absolute;
+    width: 100%;
+    &__inner {
+      display: grid;
+      padding: 1rem;
+      grid-template-areas:
+        "logo text";
+      ;
+      div {
+        grid-area: text;
+        border: solid 1px black;
+        border-left-color:#d9cdd6 ;
+        background-color: #d9cdd6;
+        padding: 1.2rem;
+        height: fit-content;
+        color: #0843bf;
+        text-align: center;
+        position: relative;
+        p {
+          font-size: 3rem;
+          font-weight: bold;
+          margin: 0;
+          line-height: 1;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          left: -.2rem;
+          width: 2px;
+          background-color: inherit;
+          height: 100%;
+        }
+      }
+    }
+  }
+</style>
