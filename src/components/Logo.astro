@@ -1,8 +1,8 @@
 ---
-
+const {class: className, ...rest} = Astro.props
 ---
 
-<div class="logo">
+<div class:list={["logo", className]} {...rest}>
   <div class="logo__text">
     <p>Mr.</p>
     <p>X</p>
@@ -12,28 +12,33 @@
   </div>
 </div>
 <style lang="scss">
-  .logo {
+  div.logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #d9cdd6;
-    border: solid 1px black;
-    padding: 1.2rem;
+    padding: 1.2em;
     gap: 2rem;
     &__text {
+      text-align: center;
       margin-right: 1.2rem;
       transform: rotateZ(-15deg);
       p {
-        font-size: 3rem;
+        font-size: var(--fs-text);
         font-weight: bold;
         margin: 0;
-
+        color: black;
         line-height: 0.8;
       }
       :last-child {
-        font-size: 6.5rem;
+        font-size: var(--fs-logo);
         font-weight: bolder;
+      }
+    }
+    &__img {
+      img {
+        width: 100%;
       }
     }
   }
